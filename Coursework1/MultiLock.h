@@ -22,7 +22,7 @@ public:
 	
 	bool Validate();
 	bool SumToLeftLess();
-	bool SumEquals();
+	bool SumEven();
 
 	Digits<int> GetCN(int i);
 	Digits<int> GetLN(int i);
@@ -68,7 +68,7 @@ bool MultiLock::Validate()
 		if (!validLN[i]) count += 1;
 		if (!validHN[i]) count += 1;
 	}
-	if (count == 0 && SumToLeftLess() && SumEquals()) return true;
+	if (count == 0 && SumToLeftLess() && SumEven()) return true;
 	//if (count == 0) return true;
 	else return false;
 }
@@ -79,7 +79,7 @@ bool MultiLock::SumToLeftLess()
 	else return false;
 }
 
-bool MultiLock::SumEquals()
+bool MultiLock::SumEven()
 {
 	bool a = false, b = false, c = false , d = false, e = false;
 	if ((CN[0].GetA() + CN[0].GetB() + CN[0].GetC() + CN[0].GetD()) % 2 == 0) a = true;
